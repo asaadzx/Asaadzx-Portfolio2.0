@@ -44,6 +44,7 @@ const config = {
 				'/',
 				'/blog/',
 				'/blog/fine-tuning-llms/',
+				'/blog/music-while-studying/',
 				'/work/',
 				'/blog/epyac-enhanced/',
 				'/blog/epyac-v1/',

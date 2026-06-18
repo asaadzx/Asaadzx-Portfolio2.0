@@ -101,4 +101,9 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - [x] Add analytics (e.g., Plausible, Umami)
 - [ ] Accessibility audit (aria, focus, screen reader)
 - [ ] Performance audit (Lighthouse)
-1
+- [ ] Make the Loading images fast with low latency
+- [ ] Add Status Section in about me page
+- [ ] Make a flutter app to control the website status 
+- [ ] Figure a way to upload the blogs markdown files in a DB and fetch them dynamically
+- [ ] Figure a way to upload the website content blogs dynamically with the flutter app
+- [ ] Make everything ready for the next 3 years and beyond and make changing files easier and more efficient

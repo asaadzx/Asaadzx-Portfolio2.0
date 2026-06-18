@@ -89,6 +89,14 @@
                 >
                     <span class="text-text">Fine-Tuning Local LLMs</span>
                 </a>
+                <a
+                    href={resolve("/blog/music-while-studying/")}
+                    class="hover:text-text text-text/50 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
+                >
+                    <span class="text-text">School Subjects Playlists</span>
+                </a>
                 <span class="text-text/30 line-through"
                     >Embedded Systems & KiCad</span
                 >
