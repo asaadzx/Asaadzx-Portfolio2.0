@@ -12,43 +12,43 @@
     const galleryItems = [
         {
             id: 1,
-            src: "/Images/p2.jpg",
+            src: "/Images/opt/p2.webp",
             title: "pink garden Flowers!",
             type: "Flowers",
         },
         {
             id: 2,
-            src: "/Images/p3.jpg",
+            src: "/Images/opt/p3.webp",
             title: "Masala In Tahrir Square",
             type: "Monument",
         },
         {
             id: 3,
-            src: "/Images/p4.jpg",
+            src: "/Images/opt/p4.webp",
             title: "Pet Store Birds !",
             type: "Birds",
         },
         {
             id: 4,
-            src: "/Images/p5.jpg",
+            src: "/Images/opt/p5.webp",
             title: "streets of tahrir square",
             type: "tahrir",
         },
         {
             id: 5,
-            src: "/Images/p6.jpg",
+            src: "/Images/opt/p6.webp",
             title: "Sayeda Khadeja mousqe in Oboar City",
             type: "Oboar City",
         },
         {
             id: 6,
-            src: "/Images/p7.jpg",
+            src: "/Images/opt/p7.webp",
             title: "Pretty garden",
             type: "Downtown",
         },
         {
             id: 7,
-            src: "/Images/p8.webp",
+            src: "/Images/opt/p8.webp",
             title: "Cool Figures skating",
             type: "Legos",
         },
@@ -156,6 +156,8 @@
                     src={item.src}
                     alt={item.title}
                     loading="lazy"
+                    width="800"
+                    height="800"
                     class="w-full h-full object-cover grayscale opacity-60 transition-all duration-500 ease-out group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105"
                 />
                 <div
@@ -184,6 +186,8 @@
                     bind:this={imageRef}
                     src={item.src}
                     alt={item.title}
+                    width="1200"
+                    height="900"
                     class="max-w-full max-h-[70vh] object-contain border border-text/10 shadow-2xl"
                 />
 

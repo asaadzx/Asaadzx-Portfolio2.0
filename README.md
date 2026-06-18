@@ -101,6 +101,8 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - [x] Add analytics (e.g., Plausible, Umami)
 - [ ] Accessibility audit (aria, focus, screen reader)
 - [ ] Performance audit (Lighthouse)
+- [ ] Add to google search console
+- [ ] Configure Vercel Blob storage for media uploads and Neon Serverless Postgres for the database
 - [ ] Make the Loading images fast with low latency
 - [ ] Add Status Section in about me page
 - [ ] Make a flutter app to control the website status 

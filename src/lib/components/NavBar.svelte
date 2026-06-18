@@ -28,6 +28,8 @@
                 <img
                     src="https://github.com/asaadzx.png"
                     alt="Home"
+                    width="32"
+                    height="32"
                     class="h-8 w-8 rounded-full border border-text/10 hover:border-primary transition-colors duration-200"
                 />
             </a>

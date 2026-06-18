@@ -271,6 +271,8 @@
                                 <Avatar.Image
                                     src="https://github.com/asaadzx.png"
                                     alt="@Asaadzx"
+                                    width="112"
+                                    height="112"
                                 />
                                 <Avatar.Fallback class="border-muted border"
                                     >@Asaadzx</Avatar.Fallback
