@@ -46,7 +46,14 @@ static/
 ├── manifest.json                  # PWA manifest
 ├── robots.txt
 ├── sitemap.xml
+├── CNAME                          # Custom domain (GitHub Pages)
 └── assets/cv.pdf                  # Resume download
+
+.github/workflows/
+└── deploy.yml                     # GitHub Actions → GitHub Pages
+
+src/routes/rss.xml/
+└── +server.ts                     # RSS feed (auto-discovered)
 ```
 
 Output goes to `build/`. Deploy the contents of that folder to any static host.
@@ -66,3 +73,22 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - Google Fonts
 - ESLint
 - Vite
+
+## Production Checklist
+
+- [x] Prerendered static site (`adapter-static`, fallback 404)
+- [x] Custom 404 page with route suggestions
+- [x] SEO meta tags per page (OG, Twitter, canonical)
+- [x] Sitemap (`/sitemap.xml`)
+- [x] RSS feed (`/rss.xml`)
+- [x] Robots.txt
+- [x] PWA manifest (`/manifest.json`)
+- [x] Favicon (avatar PNG)
+- [x] Dark/light theme with `theme-color` meta
+- [x] GitHub Actions deploy workflow
+- [x] CNAME for custom domain
+- [x] Precompress (gzip + brotli)
+- [ ] Replace gallery placeholder images with real assets
+- [ ] Add analytics (e.g., Plausible, Umami)
+- [ ] Accessibility audit (aria, focus, screen reader)
+- [ ] Performance audit (Lighthouse)

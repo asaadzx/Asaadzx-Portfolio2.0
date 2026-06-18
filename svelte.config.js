@@ -33,7 +33,7 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: '404.html',
-			precompress: false,
+			precompress: true,
 			strict: true,
 		}),
 		alias: {
@@ -48,6 +48,7 @@ const config = {
 				'/blog/epyac-enhanced/',
 				'/blog/epyac-v1/',
 				'/about/',
+				'/rss.xml/',
 			],
 			handleMissingId: 'ignore',
 		},

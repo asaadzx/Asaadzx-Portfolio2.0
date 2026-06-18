@@ -23,7 +23,7 @@
 <SEO
     title="Work | Asaad Zein"
     description="Showcase of deployed systems — local LLMs, embedded firmware, and web infrastructure. Case studies from the Epyac project and beyond."
-    url="https://asaadzein.me/work/"
+    url="https://asaadzx.is-a.dev/work/"
 />
 	<div class="mb-12 border-b border-text/10 pb-4 text-xs opacity-60">
 		<h1 class="text-base font-bold text-primary font-heading uppercase">

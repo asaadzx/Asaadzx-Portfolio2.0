@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://asaadzein.me/sitemap.xml
+Sitemap: https://asaadzx.is-a.dev/sitemap.xml

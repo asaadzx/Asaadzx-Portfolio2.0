@@ -65,7 +65,7 @@
 <SEO
     title="About | Asaad Zein"
     description="Self-taught software engineer and 3D artist specializing in local LLM optimization, custom embedded systems, and fast web infrastructure. Core AI Developer behind the Epyac System."
-    url="https://asaadzein.me/about/"
+    url="https://asaadzx.is-a.dev/about/"
 />
     <div bind:this={bioPanel} class="opacity-0 space-y-6">
         <div class="border-b border-text/10 pb-4 text-xs opacity-60 font-mono">
