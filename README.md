@@ -97,7 +97,8 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - [x] GitHub Actions deploy workflow
 - [x] CNAME for custom domain
 - [x] Precompress (gzip + brotli)
-- [ ] Replace gallery placeholder images with real assets
-- [ ] Add analytics (e.g., Plausible, Umami)
+- [x] Replace gallery placeholder images with real assets
+- [x] Add analytics (e.g., Plausible, Umami)
 - [ ] Accessibility audit (aria, focus, screen reader)
 - [ ] Performance audit (Lighthouse)
+1
