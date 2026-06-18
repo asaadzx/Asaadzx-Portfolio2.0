@@ -198,12 +198,12 @@
             icon: "simple-icons:github",
         },
         {
-            href: "https://linkedin.com/in/asaadzx",
+            href: "https://linkedin.com/in/asaad-zx",
             label: "LinkedIn",
             icon: "simple-icons:linkedin",
         },
         {
-            href: "https://x.com/asaadzx",
+            href: "https://x.com/Asaad123TY",
             label: "Twitter",
             icon: "simple-icons:x",
         },

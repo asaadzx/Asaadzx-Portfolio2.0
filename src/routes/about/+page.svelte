@@ -117,7 +117,7 @@
                 </div>
 
                 <a
-                    href="/assets/cv.pdf"
+                    href="/assets/Asaad%20Zein%20Sayed%20Resume.pdf"
                     download
                     rel="external"
                     class="block text-center border border-primary text-primary hover:bg-primary hover:text-background font-bold transition-all duration-200 py-1.5 rounded mt-4"

@@ -44,7 +44,7 @@
                     GitHub
                 </a>
                 <a
-                    href="https://linkedin.com/in/asaadzx"
+                    href="https://linkedin.com/in/asaad-zx"
                     target="_blank"
                     rel="noopener noreferrer external"
                     class="hover:text-text text-text/50 transition-colors"
@@ -54,7 +54,7 @@
                     LinkedIn
                 </a>
                 <a
-                    href="https://x.com/asaadzx"
+                    href="https://x.com/Asaad123TY"
                     target="_blank"
                     rel="noopener noreferrer external"
                     class="hover:text-text text-text/50 transition-colors"

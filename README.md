@@ -47,7 +47,16 @@ static/
 ├── robots.txt
 ├── sitemap.xml
 ├── CNAME                          # Custom domain (GitHub Pages)
-└── assets/cv.pdf                  # Resume download
+├── Images/
+│   ├── p2.jpg                     # Gallery render 1
+│   ├── p3.jpg                     # Gallery render 2
+│   ├── p4.jpg                     # Gallery render 3
+│   ├── p5.jpg                     # Gallery render 4
+│   ├── p6.jpg                     # Gallery render 5
+│   ├── p7.jpg                     # Gallery render 6
+│   └── p8.webp                    # Gallery render 7
+└── assets/
+    └── Asaad Zein Sayed Resume.pdf
 
 .github/workflows/
 └── deploy.yml                     # GitHub Actions → GitHub Pages
