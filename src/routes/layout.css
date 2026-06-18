@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-text: #fbf8f4;
+	--color-background: #161412;
+	--color-primary: #e65e19;
+	--color-secondary: #25557e;
+	--color-accent: #ffd166;
+	--color-card-bg: #231c17;
+	--font-size-sm: 0.75rem;
+	--font-size-base: 1rem;
+	--font-size-xl: 1.333rem;
+	--font-size-2xl: 1.777rem;
+	--font-size-3xl: 2.369rem;
+	--font-size-4xl: 3.158rem;
+	--font-size-5xl: 4.21rem;
+	--font-family-heading: 'Space Grotesk', sans-serif;
+	--font-family-body: 'Space Mono', monospace;
+	--font-weight-normal: 400;
+	--font-weight-bold: 700;
+}
+
+@layer base {
+	*,
+	::after,
+	::before,
+	::backdrop {
+		font-family: var(--font-family-body);
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-family-heading);
+	}
+
+	body {
+		background-color: var(--color-background);
+		color: var(--color-text);
+		transition: background-color 0.3s ease, color 0.3s ease;
+	}
+}
+
+:root,
+[data-theme="dark"] {
+	--border-alpha: rgba(251, 248, 244, 0.1);
+}
+
+[data-theme="light"] {
+	--color-text: #0b0804;
+	--color-background: #edebe9;
+	--color-primary: #e65e19;
+	--color-secondary: #81b0da;
+	--color-accent: #996b00;
+	--color-card-bg: #e2dfdc;
+	--border-alpha: rgba(11, 8, 4, 0.1);
+}
+
+pre {
+	background-color: var(--color-card-bg);
+	border: 1px solid var(--border-alpha);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	overflow-x: auto;
+	font-family: 'Space Mono', monospace;
+}
+
+code {
+	font-family: 'Space Mono', monospace;
+	color: var(--color-accent);
+	font-size: 0.875rem;
+}
+
+pre code .hljs-keyword,
+pre code .hljs-built_in,
+pre code .hljs-type {
+	color: var(--color-primary);
+	font-weight: bold;
+}
+
+pre code .hljs-string,
+pre code .hljs-addition {
+	color: var(--color-accent);
+}
+
+pre code .hljs-comment,
+pre code .hljs-quote {
+	opacity: 0.4;
+	font-style: italic;
+}
+
+pre code .hljs-number,
+pre code .hljs-literal {
+	color: var(--color-secondary);
+}
+
+pre code .hljs-attr,
+pre code .hljs-attribute {
+	color: var(--color-accent);
+}
+
+pre code .hljs-title,
+pre code .hljs-title.function_ {
+	color: var(--color-primary);
+}
+
+pre code .hljs-params {
+	color: var(--color-text);
+	opacity: 0.8;
+}
+
+/* blinking terminal cursor on article h1 */
+article h1::after {
+	content: '|';
+	animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0; }
+}
