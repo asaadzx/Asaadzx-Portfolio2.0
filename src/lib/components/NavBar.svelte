@@ -20,7 +20,7 @@
 
 <nav
     bind:this={navEl}
-    class="fixed top-0 left-0 w-full flex items-center justify-between px-6 sm:px-12 py-5 z-50"
+    class="fixed top-0 left-0 w-full flex items-center justify-between px-6 sm:px-12 py-5 z-50 bg-background/40 backdrop-blur-sm"
 >
     <ul class="flex items-center gap-8">
         <li>

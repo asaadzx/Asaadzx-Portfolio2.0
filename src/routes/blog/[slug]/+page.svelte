@@ -19,7 +19,7 @@
     author="Asaad Zein"
 />
 
-<article class="w-full max-w-3xl mx-auto mt-12 px-6 font-body text-text">
+<article class="w-full max-w-3xl mx-auto mt-32 mb-32 px-6 font-body text-text">
     <header class="border-b border-text/10 pb-6 mb-8">
         <div
             class="flex items-center gap-4 text-xs font-bold tracking-widest text-primary mb-2"

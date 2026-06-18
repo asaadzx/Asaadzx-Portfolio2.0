@@ -53,7 +53,7 @@
 </script>
 
 <section
-    class="w-full max-w-4xl mx-auto mt-20 px-6 font-body text-text mb-32 space-y-20"
+    class="w-full max-w-4xl mx-auto mt-26 mb-32 px-6 font-body text-text space-y-20"
 >
     <SEO
         title="About | Asaad Zein"
