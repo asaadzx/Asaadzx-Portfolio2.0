@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin '@tailwindcss/typography';
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
 @theme {
 	--color-text: #fbf8f4;
 	--color-background: #161412;
@@ -111,6 +121,12 @@ pre code .hljs-title.function_ {
 pre code .hljs-params {
 	color: var(--color-text);
 	opacity: 0.8;
+}
+
+/* smooth scroll targets — offset for fixed navbar */
+section[id],
+div[id] {
+	scroll-margin-top: 6rem;
 }
 
 /* blinking terminal cursor on article h1 */
