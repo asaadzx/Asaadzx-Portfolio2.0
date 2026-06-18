@@ -26,7 +26,7 @@
         url="https://asaadzx.is-a.dev/work/"
     />
     <div class="mb-12 border-b border-text/10 pb-4 text-xs opacity-60">
-        <h1 class="text-base font-bold text-primary font-heading uppercase">
+        <h1 class="text-base font-bold text-text/80 font-heading uppercase">
             // DEPLOYED_SYSTEMS_MATRIX
         </h1>
         <p class="mt-1 font-mono">

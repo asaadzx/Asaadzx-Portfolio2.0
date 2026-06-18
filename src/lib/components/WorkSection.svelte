@@ -62,19 +62,19 @@
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>
                     <span
-                        class="text-xs text-primary font-bold uppercase tracking-widest font-body"
+                        class="text-xs text-text/80 font-bold uppercase tracking-widest font-body"
                         >AI & Core Systems</span
                     >
-                    <h3
+                    <h2
                         class="font-heading font-bold text-2xl mt-1 text-text transition-transform duration-300"
                         style:transform={activeCard === 1
                             ? "translateY(-4px)"
                             : "translateY(0)"}
                     >
                         Epyac AI
-                    </h3>
+                    </h2>
                 </div>
-                <p class="text-sm text-text/60 leading-relaxed">
+                <p class="text-sm text-text/70 leading-relaxed">
                     Optimized local language architecture designed to execute
                     high-efficiency inference benchmarks directly on client-side
                     hardware.
@@ -107,24 +107,24 @@
             <div class="flex justify-between items-center h-full relative z-10">
                 <div class="max-w-[60%]">
                     <span
-                        class="text-xs text-secondary font-bold uppercase tracking-widest font-body"
+                        class="text-xs text-black font-bold uppercase tracking-widest font-body"
                         >Systems Programming</span
                     >
-                    <h3
+                    <h2
                         class="font-heading font-bold text-2xl text-text transition-transform duration-300"
                         style:transform={activeCard === 2
                             ? "translateY(-4px)"
                             : "translateY(0)"}
                     >
                         Baklava Shell
-                    </h3>
-                    <p class="text-sm text-background/80 mt-2">
+                    </h2>
+                    <p class="text-sm text-black/70 mt-2">
                         A blazing-fast, Lua-extensible shell in Go — fully
                         static, ~3MB binary, zero runtime dependencies.
                     </p>
                 </div>
                 <div
-                    class="text-background/30 text-6xl font-heading font-bold transition-transform duration-300 {activeCard ===
+                    class="text-black/30 text-6xl font-heading font-bold transition-transform duration-300 {activeCard ===
                     2
                         ? 'rotate-6'
                         : ''}"
@@ -151,19 +151,19 @@
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>
                     <span
-                        class="text-xs text-accent font-bold uppercase tracking-widest font-body"
+                        class="text-xs text-text font-bold uppercase tracking-widest font-body"
                         >Environmental Tech</span
                     >
-                    <h3
+                    <h2
                         class="font-heading font-bold text-2xl text-text transition-transform duration-300"
                         style:transform={activeCard === 3
                             ? "translateY(-4px)"
                             : "translateY(0)"}
                     >
                         NASA Space Apps
-                    </h3>
+                    </h2>
                 </div>
-                <p class="text-sm text-text/70">
+                <p class="text-sm text-text/90">
                     Real-time air quality prediction system using NASA Harmony
                     API, FastAPI, and satellite data.
                 </p>

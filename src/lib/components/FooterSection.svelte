@@ -29,7 +29,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
             <div class="flex flex-col space-y-3">
                 <span
-                    class="text-xs font-bold tracking-widest text-primary uppercase"
+                    class="text-xs font-bold tracking-widest text-text/80 uppercase"
                 >
                     // NETWORKS
                 </span>
@@ -37,7 +37,7 @@
                     href="https://github.com/asaadzx"
                     target="_blank"
                     rel="noopener noreferrer external"
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -47,7 +47,7 @@
                     href="https://linkedin.com/in/asaad-zx"
                     target="_blank"
                     rel="noopener noreferrer external"
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -57,7 +57,7 @@
                     href="https://x.com/Asaad123TY"
                     target="_blank"
                     rel="noopener noreferrer external"
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -67,7 +67,7 @@
                     href="https://buymeacoffee.com/asaadzx"
                     target="_blank"
                     rel="noopener noreferrer external"
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -83,7 +83,7 @@
                 </span>
                 <a
                     href={resolve("/blog/fine-tuning-llms/")}
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -91,16 +91,16 @@
                 </a>
                 <a
                     href={resolve("/blog/music-while-studying/")}
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
                     <span class="text-text">School Subjects Playlists</span>
                 </a>
-                <span class="text-text/30 line-through"
+                <span class="text-text/50 line-through"
                     >Embedded Systems & KiCad</span
                 >
-                <span class="text-text/30 line-through"
+                <span class="text-text/50 line-through"
                     >Blender Shading Workflows</span
                 >
             </div>
@@ -113,7 +113,7 @@
                 </span>
                 <a
                     href={resolve("/about")}
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -121,7 +121,7 @@
                 </a>
                 <a
                     href={resolve("/work")}
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -129,7 +129,7 @@
                 </a>
                 <a
                     href={resolve("/#contact")}
-                    class="hover:text-text text-text/50 transition-colors"
+                    class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
@@ -137,7 +137,7 @@
                 </a>
             </div>
 
-            <div class="flex flex-col space-y-2 text-xs text-text/40">
+            <div class="flex flex-col space-y-2 text-xs text-text/60">
                 <span
                     class="text-xs font-bold tracking-widest text-text/60 uppercase"
                 >
@@ -160,14 +160,16 @@
                 href={resolve("/")}
                 class="font-heading font-bold text-[13vw] leading-[0.85] text-text tracking-tighter select-none group transition-all duration-700 ease-out hover:tracking-normal hover:text-primary"
             >
-                <h1 class="whitespace-nowrap leading-[0.85]">
+                <h1
+                    class="whitespace-nowrap leading-[0.85] font-heading font-bold text-normal text-text tracking-tighter group-hover:tracking-normal group-hover:text-primary transition-all duration-700 ease-out"
+                >
                     ASAAD ZEIN<span class="text-primary">.</span>
                 </h1>
             </a>
         </div>
 
         <div
-            class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text/30 pt-2"
+            class="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text/50 pt-2"
         >
             <span>&copy; {new Date().getFullYear()} Asaad Zein</span>
         </div>
