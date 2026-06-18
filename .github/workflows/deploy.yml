@@ -20,6 +20,7 @@ jobs:
         with:
           bun-version: latest
       - run: bun install --frozen-lockfile
+      - run: echo "PUBLIC_FORMSPREE_ENDPOINT=${{ secrets.PUBLIC_FORMSPREE_ENDPOINT }}" > .env
       - run: bun run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
