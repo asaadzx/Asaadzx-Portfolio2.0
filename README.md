@@ -1,42 +1,68 @@
-# sv
+# asaadzx.github.io
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Portfolio site built with [Svelte 5](https://svelte.dev), [SvelteKit](https://kit.svelte.dev), and [Tailwind CSS v4](https://tailwindcss.com).
 
-## Creating a project
+## Project Structure
 
-If you're seeing this, you've probably already done this step. Congrats!
+```
+src/
+├── lib/
+│   ├── assets/
+│   │   └── favicon.svg            # Legacy favicon (unused)
+│   ├── components/
+│   │   ├── NavBar.svelte          # Fixed top navigation bar
+│   │   ├── HeroSection.svelte     # Hero: fluid canvas sim, avatar, socials
+│   │   ├── ScrollSection.svelte   # Blur/fade scroll wrapper
+│   │   ├── WorkSection.svelte     # Homepage work showcase
+│   │   ├── GallerySection.svelte  # 2×4 image lightbox
+│   │   ├── ContactSection.svelte  # Formspree contact form
+│   │   ├── FooterSection.svelte   # Mega footer
+│   │   ├── ThemeToggle.svelte     # Dark/light toggle knob
+│   │   └── SEO.svelte             # Meta tags (OG, Twitter, etc.)
+│   └── theme.svelte.ts            # Theme state manager
+├── routes/
+│   ├── layout.css                 # Tailwind v4 theme + globals
+│   ├── layout.ts                  # Prerender config
+│   ├── +layout.svelte             # Root layout shell
+│   ├── +page.svelte               # Homepage
+│   ├── +error.svelte              # Terminal-style 404 page
+│   ├── about/
+│   │   └── +page.svelte           # Bio panel + timeline
+│   ├── work/
+│   │   └── +page.svelte           # Bento grid project showcase
+│   └── blog/
+│       ├── +page.ts               # Blog post loader
+│       ├── +page.svelte           # Blog archive page
+│       └── [slug]/
+│           ├── +page.ts           # Post detail loader
+│           └── +page.svelte       # Post detail renderer
+└── posts/
+    ├── fine-tuning-llms.md        # Blog post
+    ├── epyac-enhanced.md          # Project case study
+    └── epyac-v1.md                # Project case study
 
-```sh
-# create a new project
-npx sv create my-app
+static/
+├── favicon.png                    # GitHub avatar favicon
+├── manifest.json                  # PWA manifest
+├── robots.txt
+├── sitemap.xml
+└── assets/cv.pdf                  # Resume download
 ```
 
-To recreate this project with the same configuration:
+Output goes to `build/`. Deploy the contents of that folder to any static host.
 
-```sh
-# recreate this project
-bun x sv@0.16.1 create --template minimal --types ts --add eslint vitest="usages:unit,component" playwright tailwindcss="plugins:typography" sveltekit-adapter="adapter:static" mcp="ide:opencode" --install bun ./
-```
+## Libraries & Technologies
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+- Svelte 5
+- SvelteKit
+- Tailwind CSS v4
+- TypeScript
+- mdsvex
+- animejs v4
+- highlight.js
+- @iconify/svelte
+- @lucide/svelte
+- Formspree
+- Google Fonts
+- ESLint
+- Vite

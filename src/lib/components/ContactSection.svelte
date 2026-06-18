@@ -1,5 +1,6 @@
 <script lang="ts">
     import { animate, stagger } from "animejs";
+    import { PUBLIC_FORMSPREE_ENDPOINT } from "$env/static/public";
 
     let selectedRoute = $state("general");
     let formStatus = $state<"idle" | "transmitting" | "success" | "error">(
@@ -47,7 +48,7 @@
         await anim;
 
         try {
-            const response = await fetch("https://formspree.io/f/mldnkejy", {
+            const response = await fetch(PUBLIC_FORMSPREE_ENDPOINT, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
