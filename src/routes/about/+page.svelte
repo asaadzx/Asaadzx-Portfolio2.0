@@ -79,16 +79,16 @@
     >
         <div class="md:col-span-2 space-y-4 text-sm leading-relaxed opacity-80">
             <p>
-                I am a 16-year-old self-taught full-stack software engineer and 3D
-                artist studying at Anas ibn Malik School. My goal is to join the
-                Egyptian Japanese Kosen — a specialized engineering track combining
-                Japanese manufacturing disciplines with deep technical theory —
-                then study abroad and work all around the world.
+                I am a 16-year-old self-taught full-stack software engineer and
+                3D artist studying at Anas ibn Malik School. My goal is to join
+                the Egyptian Japanese Kosen — a specialized engineering track
+                combining Japanese manufacturing disciplines with deep technical
+                theory — then study abroad and work all around the world.
             </p>
             <p>
-                Over the past four years, I have anchored my development methodology
-                within open-source distributions, terminal-driven workflows, and
-                resource-conscious software frameworks.
+                Over the past four years, I have anchored my development
+                methodology within open-source distributions, terminal-driven
+                workflows, and resource-conscious software frameworks.
             </p>
 
             <div class="pt-4 flex flex-wrap gap-2">
@@ -211,17 +211,17 @@
             class="bg-card-bg border border-text/10 p-5 rounded-xl font-mono text-[11px] space-y-4"
         >
             <div class="text-primary font-bold border-b border-text/10 pb-1">
-                // ATOMIC_METRICS
+                // Tools I love ! and My CV
             </div>
             <div class="space-y-2">
                 <div>
-                    <span class="opacity-40">MAIN_ENV:</span> NeoVim terminal core
+                    <span class="opacity-40">MAIN_ENV:</span> Zed Editor core
                 </div>
                 <div>
                     <span class="opacity-40">3D_SUITE:</span> Blender Shading Core
                 </div>
                 <div>
-                    <span class="opacity-40">HARDWARE:</span> Custom ESP32 Microcontrollers
+                    <span class="opacity-40">HW:</span> Custom ESP32 Boards
                 </div>
             </div>
             <a
