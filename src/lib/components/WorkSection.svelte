@@ -1,9 +1,22 @@
 <script lang="ts">
     import { animate, stagger } from "animejs";
+    import { goto } from "$app/navigation";
+    import { resolve } from "$app/paths";
 
     let activeCard = $state<number | null>(null);
     let section: HTMLElement;
     let animated = $state(false);
+
+    function navigateTo(slug: string) {
+        goto(resolve(`/blog/${slug}/`));
+    }
+
+    function handleKeydown(e: KeyboardEvent, slug: string) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            navigateTo(slug);
+        }
+    }
 
     $effect(() => {
         const observer = new IntersectionObserver(
@@ -43,6 +56,8 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 1)}
             onblur={() => (activeCard = null)}
+            onclick={() => navigateTo('epyac-enhanced')}
+            onkeydown={(e) => handleKeydown(e, 'epyac-enhanced')}
         >
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>
@@ -73,7 +88,7 @@
             ></div>
         </div>
 
-        <!-- Card 2: Ordex App (spans 1 row, 2 columns) -->
+        <!-- Card 2: Baklava Shell (spans 1 row, 2 columns) -->
         <div
             data-card="2"
             role="button"
@@ -86,12 +101,14 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 2)}
             onblur={() => (activeCard = null)}
+            onclick={() => navigateTo('baklava-shell')}
+            onkeydown={(e) => handleKeydown(e, 'baklava-shell')}
         >
             <div class="flex justify-between items-center h-full relative z-10">
                 <div class="max-w-[60%]">
                     <span
                         class="text-xs text-secondary font-bold uppercase tracking-widest font-body"
-                        >Mobile Development</span
+                        >Systems Programming</span
                     >
                     <h3
                         class="font-heading font-bold text-2xl text-text transition-transform duration-300"
@@ -99,19 +116,19 @@
                             ? "translateY(-4px)"
                             : "translateY(0)"}
                     >
-                        Ordex App
+                        Baklava Shell
                     </h3>
                     <p class="text-sm text-background/80 mt-2">
-                        A clean, functional food logistics portal featuring
-                        Material 3 UI design parameters.
+                        A blazing-fast, Lua-extensible shell in Go — fully
+                        static, ~3MB binary, zero runtime dependencies.
                     </p>
                 </div>
                 <div
-                    class="w-24 h-24 bg-background/20 transition-transform duration-300 {activeCard ===
+                    class="text-background/30 text-6xl font-heading font-bold transition-transform duration-300 {activeCard ===
                     2
                         ? 'rotate-6'
                         : ''}"
-                ></div>
+                >&gt;_</div>
             </div>
         </div>
 

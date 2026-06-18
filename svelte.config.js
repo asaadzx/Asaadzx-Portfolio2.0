@@ -47,6 +47,7 @@ const config = {
 				'/work/',
 				'/blog/epyac-enhanced/',
 				'/blog/epyac-v1/',
+				'/blog/baklava-shell/',
 				'/about/',
 				'/rss.xml/',
 			],
