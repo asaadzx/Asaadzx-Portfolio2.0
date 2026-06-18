@@ -48,6 +48,7 @@ const config = {
 				'/blog/epyac-enhanced/',
 				'/blog/epyac-v1/',
 				'/blog/baklava-shell/',
+				'/blog/nasa-space-apps/',
 				'/about/',
 				'/rss.xml/',
 			],

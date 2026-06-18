@@ -40,4 +40,9 @@
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
+	<url>
+		<loc>https://asaadzx.is-a.dev/blog/nasa-space-apps/</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
 </urlset>

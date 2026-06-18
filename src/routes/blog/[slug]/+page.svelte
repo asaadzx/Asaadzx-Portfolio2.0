@@ -44,10 +44,15 @@
     </header>
 
     <div
-        class="prose prose-invert max-w-none font-body text-sm leading-relaxed space-y-6
+        class="prose max-w-none font-body text-sm leading-relaxed space-y-6
 		prose-headings:font-heading prose-headings:font-bold prose-headings:text-text
 		prose-headings:tracking-tight
-		prose-h1:text-2xl prose-h2:text-xl prose-p:text-text/80"
+		prose-h1:text-2xl prose-h2:text-xl prose-p:text-text/80
+		prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+		prose-strong:text-text
+		prose-code:text-accent prose-code:bg-card-bg prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:text-xs
+		prose-li:text-text/80
+		prose-pre:bg-card-bg prose-pre:border prose-pre:border-text/10"
     >
         <Content />
     </div>

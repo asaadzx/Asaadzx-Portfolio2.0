@@ -145,6 +145,8 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 3)}
             onblur={() => (activeCard = null)}
+            onclick={() => navigateTo('nasa-space-apps')}
+            onkeydown={(e) => handleKeydown(e, 'nasa-space-apps')}
         >
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>
@@ -158,12 +160,12 @@
                             ? "translateY(-4px)"
                             : "translateY(0)"}
                     >
-                        Space Apps Platform
+                        NASA Space Apps
                     </h3>
                 </div>
                 <p class="text-sm text-text/70">
-                    A real-time environmental analytical backend mapping complex
-                    data sets across regional vector maps.
+                    Real-time air quality prediction system using NASA Harmony
+                    API, FastAPI, and satellite data.
                 </p>
             </div>
         </div>
