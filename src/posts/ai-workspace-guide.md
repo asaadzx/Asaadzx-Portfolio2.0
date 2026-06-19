@@ -16,6 +16,8 @@ Yet, this is exactly how most of the world uses Artificial Intelligence. Every p
 
 We have entered a golden era of **Sovereign AI**. Today, a standard consumer laptop or a mid-range workstation can run highly capable, state-of-the-art Large Language Models (LLMs) completely offline. This guide will walk you through the math, the hardware requirements, the best model selections, and a production-grade containerized deployment to run your own fully private AI stack.
 
+> **Listen to this article:** Prefer audio? An AI-generated podcast discussion of this guide is available on [NotebookLM](https://notebooklm.google.com/notebook/c670810e-5f79-4d1b-830c-a85bb0e4856e).
+
 ### The Privacy and Data Sovereignty Imperative
 
 To understand why local AI has transitioned from a hobbyist playground to an enterprise necessity, we must look at the real-world implications of data containment. According to the Cisco 2025 Data Privacy Benchmark Study, data privacy has surfaced as a critical structural concern for over 80% of organizations using generative AI. The risks of cloud-based LLM leakage are concrete, not theoretical:
