@@ -99,6 +99,8 @@ Where:
 - **D** = Hidden dimension size per head
 - **Z** = Quantization of the cache (usually 2 bytes for FP16, or 1 byte for quantized FP8 cache)
 
+**Pro Tip:** While the model weights fit in VRAM, expanding the context to its maximum layer limits will instantly trigger the OOM errors you warned about unless the cache is explicitly quantized or limited via the Open WebUI/Ollama system parameters.
+
 #### 3. Total VRAM Required
 
 To find your total system requirements:
@@ -218,6 +220,8 @@ services:
 volumes:
   ollama_data:
   open-webui_data:
+
+# Note: Linux users need to install nvidia-container-toolkit on the host machine for the nvidia driver reservation to work without errors.
 ```
 
 ### Step 3: Launch the Stack
