@@ -37,7 +37,7 @@ src/
 │           ├── +page.ts           # Post detail loader
 │           └── +page.svelte       # Post detail renderer
 └── posts/
-    ├── fine-tuning-llms.md        # Blog post
+    ├── ai-workspace-guide.md        # Blog post
     ├── epyac-enhanced.md          # Project case study
     └── epyac-v1.md                # Project case study
 
@@ -99,11 +99,11 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - [x] Precompress (gzip + brotli)
 - [x] Replace gallery placeholder images with real assets
 - [x] Add analytics (e.g., Plausible, Umami)
-- [ ] Accessibility audit (aria, focus, screen reader)
-- [ ] Performance audit (Lighthouse)
-- [ ] Add to google search console
+- [x] Accessibility audit (aria, focus, screen reader)
+- [x] Performance audit (Lighthouse)
+- [x] Add to google search console
 - [ ] Configure Vercel Blob storage for media uploads and Neon Serverless Postgres for the database
-- [ ] Make the Loading images fast with low latency
+- [x] Make the Loading images fast with low latency
 - [ ] Add Status Section in about me page
 - [ ] Make a flutter app to control the website status 
 - [ ] Figure a way to upload the blogs markdown files in a DB and fetch them dynamically

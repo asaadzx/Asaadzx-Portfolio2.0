@@ -243,7 +243,7 @@
     });
 </script>
 
-<div class="relative w-full bg-background overflow-hidden pb-40" id="about">
+<div class="relative w-full bg-background overflow-hidden pb-40 pt-14">
     <canvas
         bind:this={canvas}
         class="absolute inset-0 w-full h-full pointer-events-none z-0"

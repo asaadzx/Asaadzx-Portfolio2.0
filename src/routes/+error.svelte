@@ -12,9 +12,13 @@
 	let suggestions = $state<{ slug: string; title: string }[]>([]);
 
 	const knownBlogs = [
+		{ slug: 'ai-workspace-guide', title: "The Modern Developer's AI Workspace" },
 		{ slug: 'fine-tuning-llms', title: 'Fine-Tuning Local LLMs' },
 		{ slug: 'epyac-enhanced', title: 'Epyac Enhanced' },
 		{ slug: 'epyac-v1', title: 'Epyac v1' },
+		{ slug: 'baklava-shell', title: 'Baklava Shell' },
+		{ slug: 'nasa-space-apps', title: 'NASA Space Apps' },
+		{ slug: 'music-while-studying', title: 'School Subjects Playlists' },
 	];
 
 	onMount(() => {

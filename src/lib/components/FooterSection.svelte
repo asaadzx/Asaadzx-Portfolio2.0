@@ -82,12 +82,12 @@
                     // INBOUND_BLOGS
                 </span>
                 <a
-                    href={resolve("/blog/fine-tuning-llms/")}
+                    href={resolve("/blog/ai-workspace-guide/")}
                     class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
-                    <span class="text-text">Fine-Tuning Local LLMs</span>
+                    <span class="text-text">The Modern Developer's AI Workspace</span>
                 </a>
                 <a
                     href={resolve("/blog/music-while-studying/")}

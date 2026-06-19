@@ -56,8 +56,8 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 1)}
             onblur={() => (activeCard = null)}
-            onclick={() => navigateTo('epyac-enhanced')}
-            onkeydown={(e) => handleKeydown(e, 'epyac-enhanced')}
+            onclick={() => navigateTo("epyac-enhanced")}
+            onkeydown={(e) => handleKeydown(e, "epyac-enhanced")}
         >
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>
@@ -101,14 +101,14 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 2)}
             onblur={() => (activeCard = null)}
-            onclick={() => navigateTo('baklava-shell')}
-            onkeydown={(e) => handleKeydown(e, 'baklava-shell')}
+            onclick={() => navigateTo("baklava-shell")}
+            onkeydown={(e) => handleKeydown(e, "baklava-shell")}
         >
             <div class="flex justify-between items-center h-full relative z-10">
                 <div class="max-w-[60%]">
                     <span
                         class="text-xs text-black font-bold uppercase tracking-widest font-body"
-                        >Systems Programming</span
+                        >Systems</span
                     >
                     <h2
                         class="font-heading font-bold text-2xl text-text transition-transform duration-300"
@@ -128,7 +128,9 @@
                     2
                         ? 'rotate-6'
                         : ''}"
-                >&gt;_</div>
+                >
+                    &gt;_
+                </div>
             </div>
         </div>
 
@@ -145,8 +147,8 @@
             onmouseleave={() => (activeCard = null)}
             onfocus={() => (activeCard = 3)}
             onblur={() => (activeCard = null)}
-            onclick={() => navigateTo('nasa-space-apps')}
-            onkeydown={(e) => handleKeydown(e, 'nasa-space-apps')}
+            onclick={() => navigateTo("nasa-space-apps")}
+            onkeydown={(e) => handleKeydown(e, "nasa-space-apps")}
         >
             <div class="flex flex-col justify-between h-full relative z-10">
                 <div>

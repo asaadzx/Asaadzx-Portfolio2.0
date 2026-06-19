@@ -43,7 +43,7 @@ const config = {
 			entries: [
 				'/',
 				'/blog/',
-				'/blog/fine-tuning-llms/',
+				'/blog/ai-workspace-guide/',
 				'/blog/music-while-studying/',
 				'/work/',
 				'/blog/epyac-enhanced/',
