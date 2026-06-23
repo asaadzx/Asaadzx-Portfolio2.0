@@ -1,12 +1,61 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { resolve } from "$app/paths";
+    import { onMount } from "svelte";
     import SEO from "$lib/components/SEO.svelte";
+    import { Eye, Heart } from "@lucide/svelte";
 
     let { data } = $props();
 
     let Content = $derived(data.content);
     let meta = $derived(data.meta);
+
+    let views = $state(0);
+    let likes = $state(0);
+    let liked = $state(false);
+    let loading = $state(true);
+
+    const storageKey = `liked:${$page.params.slug}`;
+
+    onMount(async () => {
+        try {
+            const res = await fetch(`/api/posts/${$page.params.slug}`);
+            if (res.ok) {
+                const stats = await res.json();
+                views = stats.views;
+                likes = stats.likes;
+            }
+        } catch { /* ignore */ }
+
+        liked = localStorage.getItem(storageKey) === "true";
+
+        try {
+            await fetch(`/api/posts/${$page.params.slug}/view`, { method: "POST" });
+            views++;
+        } catch { /* ignore */ }
+
+        loading = false;
+    });
+
+    async function toggleLike() {
+        if (liked) {
+            const res = await fetch(`/api/posts/${$page.params.slug}/like`, { method: "DELETE" });
+            if (res.ok) {
+                const data = await res.json();
+                likes = data.likes;
+                liked = false;
+                localStorage.removeItem(storageKey);
+            }
+        } else {
+            const res = await fetch(`/api/posts/${$page.params.slug}/like`, { method: "POST" });
+            if (res.ok) {
+                const data = await res.json();
+                likes = data.likes;
+                liked = true;
+                localStorage.setItem(storageKey, "true");
+            }
+        }
+    }
 </script>
 
 <SEO
@@ -41,6 +90,22 @@
         <p class="mt-3 text-sm text-text/60 italic leading-relaxed">
             {meta.excerpt}
         </p>
+        <div class="flex items-center gap-4 mt-4 text-xs text-text/50">
+            <span class="flex items-center gap-1.5">
+                <Eye class="size-3.5" />
+                {views} view{views !== 1 ? "s" : ""}
+            </span>
+            <button
+                onclick={toggleLike}
+                disabled={loading}
+                class="flex items-center gap-1.5 transition-colors {liked ? 'text-red-400' : ' hover:text-text/80'}"
+            >
+                <Heart
+                    class="size-3.5 transition-all {liked ? 'fill-red-400 scale-110' : ''}"
+                />
+                {likes}
+            </button>
+        </div>
     </header>
 
     <div

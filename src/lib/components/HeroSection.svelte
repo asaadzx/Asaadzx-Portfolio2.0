@@ -216,13 +216,14 @@
 
     $effect(() => {
         const { chars } = splitText(heading, { chars: true });
+        const isMobile = window.innerWidth < 640;
 
         animate(chars, {
             opacity: [0, 1],
-            translateY: [100, 0],
-            duration: 200,
-            delay: stagger(50),
-            easing: "inOutElastic",
+            translateY: [isMobile ? 30 : 100, 0],
+            duration: isMobile ? 120 : 200,
+            delay: stagger(isMobile ? 25 : 50),
+            easing: isMobile ? "easeOutQuad" : "inOutElastic",
         });
 
         animate(dot, {
@@ -236,8 +237,8 @@
         animate([handle, role], {
             opacity: [0, 1],
             translateY: [10, 0],
-            duration: 400,
-            delay: stagger(100, { start: 600 }),
+            duration: isMobile ? 300 : 400,
+            delay: stagger(isMobile ? 80 : 100, { start: 600 }),
             easing: "easeOutQuad",
         });
     });

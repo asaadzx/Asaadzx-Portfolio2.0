@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import rehypeHighlight from 'rehype-highlight';
@@ -30,11 +30,11 @@ const config = {
 	},
 	kit: {
 		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: '404.html',
-			precompress: true,
-			strict: true,
+			runtime: 'nodejs20.x',
+			images: {
+				sizes: [640, 828, 1200, 1920, 3840],
+				formats: ['image/webp'],
+			},
 		}),
 		alias: {
 			$posts: 'src/posts',
@@ -50,6 +50,7 @@ const config = {
 				'/blog/epyac-v1/',
 				'/blog/baklava-shell/',
 				'/blog/nasa-space-apps/',
+				'/blog/embedded-systems-dna/',
 				'/about/',
 				'/rss.xml/',
 			],

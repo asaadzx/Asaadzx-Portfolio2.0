@@ -97,12 +97,22 @@
                 >
                     <span class="text-text">School Subjects Playlists</span>
                 </a>
-                <span class="text-text/50 line-through"
-                    >Embedded Systems & KiCad</span
+                <a
+                    href={resolve("/blog/embedded-systems-dna/")}
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
                 >
-                <span class="text-text/50 line-through"
-                    >Blender Shading Workflows</span
+                    <span class="text-text">The DNA of Embedded Systems</span>
+                </a>
+                <a
+                    href={resolve("/blog/epyac-enhanced/")}
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
                 >
+                    <span class="text-text">EPYAC: Technical Architecture</span>
+                </a>
             </div>
 
             <div class="flex flex-col space-y-3">

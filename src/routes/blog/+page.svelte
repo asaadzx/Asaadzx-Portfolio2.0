@@ -2,12 +2,14 @@
     import { animate, stagger } from "animejs";
     import { resolve } from "$app/paths";
     import { onMount } from "svelte";
+    import { Eye } from "@lucide/svelte";
 
     let { data } = $props();
 
     let postRows = $state<HTMLElement[]>([]);
+    let stats = $state<Record<string, { views: number; likes: number }>>({});
 
-    onMount(() => {
+    onMount(async () => {
         animate(postRows, {
             opacity: [0, 1],
             translateX: [-12, 0],
@@ -15,6 +17,11 @@
             duration: 400,
             easing: "easeOutQuad",
         });
+
+        try {
+            const res = await fetch("/api/posts");
+            if (res.ok) stats = await res.json();
+        } catch { /* ignore */ }
     });
 </script>
 
@@ -35,6 +42,7 @@
 
     <div class="space-y-1">
         {#each data.posts as post, index (post.slug)}
+            {@const postStats = stats[post.slug]}
             <div
                 bind:this={postRows[index]}
                 class="opacity-0 will-change-transform"
@@ -78,6 +86,13 @@
                                 </span>
                             {/each}
                         </div>
+
+                        {#if postStats}
+                            <span class="flex items-center gap-1 opacity-40" title="Views">
+                                <Eye class="size-3" />
+                                {postStats.views}
+                            </span>
+                        {/if}
 
                         <span
                             class="font-mono text-[11px] opacity-40 group-hover:opacity-100 group-hover:text-accent transition-all"
