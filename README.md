@@ -1,6 +1,6 @@
 # asaadzx.github.io
 
-Portfolio site built with [Svelte 5](https://svelte.dev), [SvelteKit](https://kit.svelte.dev), and [Tailwind CSS v4](https://tailwindcss.com).
+Portfolio site built with [Svelte 5](https://svelte.dev), [SvelteKit](https://kit.svelte.dev), [Tailwind CSS v4](https://tailwindcss.com), and [Turso](https://turso.tech) for edge-hosted persistent data.
 
 ## Project Structure
 
@@ -8,69 +8,80 @@ Portfolio site built with [Svelte 5](https://svelte.dev), [SvelteKit](https://ki
 src/
 ├── lib/
 │   ├── assets/
-│   │   └── favicon.svg            # Legacy favicon (unused)
 │   ├── components/
-│   │   ├── NavBar.svelte          # Fixed top navigation bar
-│   │   ├── HeroSection.svelte     # Hero: fluid canvas sim, avatar, socials
-│   │   ├── ScrollSection.svelte   # Blur/fade scroll wrapper
-│   │   ├── WorkSection.svelte     # Homepage work showcase
-│   │   ├── GallerySection.svelte  # 2×4 image lightbox
-│   │   ├── ContactSection.svelte  # Formspree contact form
-│   │   ├── FooterSection.svelte   # Mega footer
-│   │   ├── ThemeToggle.svelte     # Dark/light toggle knob
-│   │   └── SEO.svelte             # Meta tags (OG, Twitter, etc.)
-│   └── theme.svelte.ts            # Theme state manager
+│   │   ├── NavBar.svelte           # Fixed top navigation bar
+│   │   ├── HeroSection.svelte      # Hero: fluid canvas sim, avatar, socials
+│   │   ├── ScrollSection.svelte    # Blur/fade scroll wrapper
+│   │   ├── WorkSection.svelte      # Homepage work showcase
+│   │   ├── GallerySection.svelte   # 2×4 image lightbox
+│   │   ├── ContactSection.svelte   # Formspree contact form
+│   │   ├── FooterSection.svelte    # Mega footer
+│   │   ├── ThemeToggle.svelte      # Dark/light toggle knob
+│   │   └── SEO.svelte              # Meta tags (OG, Twitter, etc.)
+│   ├── server/
+│   │   └── db.ts                   # Turso database client
+│   └── theme.svelte.ts             # Theme state manager
 ├── routes/
-│   ├── layout.css                 # Tailwind v4 theme + globals
-│   ├── layout.ts                  # Prerender config
-│   ├── +layout.svelte             # Root layout shell
-│   ├── +page.svelte               # Homepage
-│   ├── +error.svelte              # Terminal-style 404 page
+│   ├── layout.css                  # Tailwind v4 theme + globals
+│   ├── layout.ts                   # Prerender config, Vercel analytics
+│   ├── +layout.svelte              # Root layout shell
+│   ├── +page.svelte                # Homepage
+│   ├── +error.svelte               # Terminal-style 404 page
 │   ├── about/
-│   │   └── +page.svelte           # Bio panel + timeline
+│   │   └── +page.svelte            # Bio panel + timeline
 │   ├── work/
-│   │   └── +page.svelte           # Bento grid project showcase
-│   └── blog/
-│       ├── +page.ts               # Blog post loader
-│       ├── +page.svelte           # Blog archive page
-│       └── [slug]/
-│           ├── +page.ts           # Post detail loader
-│           └── +page.svelte       # Post detail renderer
-└── posts/
-    ├── ai-workspace-guide.md        # Blog post
-    ├── epyac-enhanced.md          # Project case study
-    └── epyac-v1.md                # Project case study
+│   │   └── +page.svelte            # Bento grid project showcase
+│   ├── blog/
+│   │   ├── +page.ts                # Blog post loader
+│   │   ├── +page.svelte            # Blog archive page (views + likes)
+│   │   └── [slug]/
+│   │       ├── +page.ts            # Post detail loader
+│   │       └── +page.svelte        # Post detail renderer (views + likes)
+│   └── api/
+│       └── posts/
+│           ├── +server.ts          # GET all posts stats
+│           └── [slug]/
+│               ├── +server.ts      # GET single post stats
+│               ├── view/+server.ts # POST increment view
+│               └── like/+server.ts # POST/DELETE toggle like
+├── posts/
+│   ├── ai-workspace-guide.md
+│   ├── music-while-studying.md
+│   ├── epyac-enhanced.md
+│   ├── epyac-v1.md
+│   ├── baklava-shell.md
+│   ├── nasa-space-apps.md
+│   └── embedded-systems-dna.md
+└── rss.xml/
+    └── +server.ts                  # RSS feed (auto-discovered)
 
 static/
-├── favicon.png                    # GitHub avatar favicon
-├── manifest.json                  # PWA manifest
+├── favicon.png
+├── manifest.json
 ├── robots.txt
 ├── sitemap.xml
-├── CNAME                          # Custom domain (GitHub Pages)
+├── CNAME
 ├── Images/
-│   ├── p2.jpg                     # Gallery render 1
-│   ├── p3.jpg                     # Gallery render 2
-│   ├── p4.jpg                     # Gallery render 3
-│   ├── p5.jpg                     # Gallery render 4
-│   ├── p6.jpg                     # Gallery render 5
-│   ├── p7.jpg                     # Gallery render 6
-│   └── p8.webp                    # Gallery render 7
+│   ├── p2.jpg
+│   ├── p3.jpg
+│   ├── p4.jpg
+│   ├── p5.jpg
+│   ├── p6.jpg
+│   ├── p7.jpg
+│   └── p8.webp
 └── assets/
     └── Asaad Zein Sayed Resume.pdf
 
 .github/workflows/
-└── deploy.yml                     # GitHub Actions → GitHub Pages
-
-src/routes/rss.xml/
-└── +server.ts                     # RSS feed (auto-discovered)
+└── ci.yml                          # CI: check, lint, build (env vars from secrets)
 ```
 
-Output goes to `build/`. Deploy the contents of that folder to any static host.
+Deployed on **Vercel** with serverless API routes for views/likes. Pages are prerendered where possible.
 
 ## Libraries & Technologies
 
 - Svelte 5
-- SvelteKit
+- SvelteKit (adapter-vercel)
 - Tailwind CSS v4
 - TypeScript
 - mdsvex
@@ -78,14 +89,17 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - highlight.js
 - @iconify/svelte
 - @lucide/svelte
+- @libsql/client (Turso)
 - Formspree
 - Google Fonts
 - ESLint
 - Vite
+- Vitest
+- Playwright
 
 ## Production Checklist
 
-- [x] Prerendered static site (`adapter-static`, fallback 404)
+- [x] Hybrid static + serverless (adapter-vercel, prerendered pages)
 - [x] Custom 404 page with route suggestions
 - [x] SEO meta tags per page (OG, Twitter, canonical)
 - [x] Sitemap (`/sitemap.xml`)
@@ -94,18 +108,19 @@ Output goes to `build/`. Deploy the contents of that folder to any static host.
 - [x] PWA manifest (`/manifest.json`)
 - [x] Favicon (avatar PNG)
 - [x] Dark/light theme with `theme-color` meta
-- [x] GitHub Actions deploy workflow
+- [x] GitHub Actions CI workflow
 - [x] CNAME for custom domain
-- [x] Precompress (gzip + brotli)
-- [x] Replace gallery placeholder images with real assets
-- [x] Add analytics (e.g., Plausible, Umami)
+- [x] Analytics (Vercel Analytics + Speed Insights)
 - [x] Accessibility audit (aria, focus, screen reader)
 - [x] Performance audit (Lighthouse)
-- [x] Add to google search console
-- [ ] Configure Vercel Blob storage for media uploads and Neon Serverless Postgres for the database
-- [x] Make the Loading images fast with low latency
+- [x] Google Search Console
+- [x] Edge-hosted database (Turso) for views & likes
+- [x] Blog posts with view counters and like buttons
 - [ ] Add Status Section in about me page
-- [ ] Make a flutter app to control the website status 
+- [ ] Make a Flutter app to control the website status
 - [ ] Figure a way to upload the blogs markdown files in a DB and fetch them dynamically
-- [ ] Figure a way to upload the website content blogs dynamically with the flutter app
+- [ ] Figure a way to upload the website content blogs dynamically with the Flutter app
 - [ ] Make everything ready for the next 3 years and beyond and make changing files easier and more efficient
+- [ ] Store blog content in Turso DB (replace markdown files) with full-text search
+- [ ] Vercel Blob for blog cover images and media uploads
+- [ ] Flutter app to manage blog content (create/edit/delete posts) and control website status

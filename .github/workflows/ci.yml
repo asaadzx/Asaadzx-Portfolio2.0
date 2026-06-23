@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+      - run: bun install --frozen-lockfile
+      - run: |
+          cat > .env << EOF
+          PUBLIC_FORMSPREE_ENDPOINT=${{ secrets.PUBLIC_FORMSPREE_ENDPOINT }}
+          DATABASE_URL=${{ secrets.DATABASE_URL }}
+          DATABASE_AUTH_TOKEN=${{ secrets.DATABASE_AUTH_TOKEN }}
+          GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          EOF
+      - run: bun run check
+      - run: bun run lint
+      - run: bun run build

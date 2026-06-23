@@ -6,6 +6,27 @@
 
     let sections = $state<HTMLElement[]>([]);
 
+    let gh = $state<{
+        login: string;
+        avatar: string;
+        name: string;
+        bio: string;
+        publicRepos: number;
+        followers: number;
+        following: number;
+        url: string;
+        repos: {
+            name: string;
+            description: string;
+            url: string;
+            stars: number;
+            language: string;
+        }[];
+    } | null>(null);
+
+    let ghLoading = $state(true);
+    let ghError = $state(false);
+
     const milestones = [
         {
             year: "2026",
@@ -49,6 +70,17 @@
             duration: 500,
             easing: "easeOutQuart",
         });
+
+        fetch("/api/github")
+            .then((r) => (r.ok ? r.json() : Promise.reject()))
+            .then((d) => {
+                gh = d;
+                ghLoading = false;
+            })
+            .catch(() => {
+                ghLoading = false;
+                ghError = true;
+            });
     });
 </script>
 
@@ -274,5 +306,115 @@
                 </div>
             {/each}
         </div>
+    </div>
+
+    <div bind:this={sections[4]} class="opacity-0 space-y-6">
+        <div class="border-b border-text/10 pb-4 text-xs opacity-60 font-mono">
+            <span class="text-primary font-bold">// GITHUB_STATS</span>
+        </div>
+
+        {#if gh && !ghError}
+            <!-- eslint-disable svelte/no-navigation-without-resolve -->
+            <div
+                class="bg-card-bg border border-text/10 p-5 rounded-xl space-y-5"
+            >
+                <div class="flex items-center gap-4">
+                    <img
+                        src={gh.avatar}
+                        alt={gh.login}
+                        class="w-14 h-14 rounded-full border border-text/10"
+                    />
+                    <div>
+                        <a
+                            href={gh.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="font-bold text-base hover:text-primary transition-colors"
+                        >
+                            {gh.name || gh.login}
+                        </a>
+                        {#if gh.bio}
+                            <p class="text-xs text-text/60 mt-0.5 max-w-md">
+                                {gh.bio}
+                            </p>
+                        {/if}
+                    </div>
+                </div>
+
+                <div class="flex gap-6 text-xs font-mono">
+                    <div>
+                        <span class="text-primary font-bold"
+                            >{gh.publicRepos}</span
+                        > <span class="opacity-40">repos</span>
+                    </div>
+                    <div>
+                        <span class="text-primary font-bold"
+                            >{gh.followers}</span
+                        > <span class="opacity-40">followers</span>
+                    </div>
+                    <div>
+                        <span class="text-primary font-bold"
+                            >{gh.following}</span
+                        > <span class="opacity-40">following</span>
+                    </div>
+                </div>
+
+                <div>
+                    <img
+                        src="https://ghchart.rshah.org/asaadzx"
+                        alt="GitHub contribution calendar"
+                        class="w-full max-w-2xl rounded"
+                        loading="lazy"
+                    />
+                </div>
+
+                <div class="space-y-2">
+                    <div
+                        class="text-xs font-mono opacity-40 uppercase tracking-widest"
+                    >
+                        Latest Repos
+                    </div>
+                    {#each gh.repos as repo (repo.name)}
+                        <a
+                            href={repo.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center justify-between p-3 rounded-lg border border-text/10 hover:border-primary transition-all text-xs"
+                        >
+                            <div class="flex items-center gap-2 min-w-0">
+                                <Icon
+                                    icon="simple-icons:github"
+                                    class="w-3.5 h-3.5 shrink-0"
+                                />
+                                <span class="font-medium truncate"
+                                    >{repo.name}</span
+                                >
+                                {#if repo.language}
+                                    <span class="hidden sm:inline opacity-40"
+                                        >· {repo.language}</span
+                                    >
+                                {/if}
+                            </div>
+                            {#if repo.stars > 0}
+                                <span
+                                    class="shrink-0 flex items-center gap-1 opacity-60"
+                                >
+                                    <Icon
+                                        icon="simple-icons:github"
+                                        class="w-3 h-3"
+                                    />
+                                    {repo.stars}
+                                </span>
+                            {/if}
+                        </a>
+                    {/each}
+                </div>
+            </div>
+            <!-- eslint-enable svelte/no-navigation-without-resolve -->
+        {:else if ghLoading}
+            <div class="text-xs opacity-40 font-mono">
+                Loading GitHub data...
+            </div>
+        {/if}
     </div>
 </section>

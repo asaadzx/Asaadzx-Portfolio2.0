@@ -87,7 +87,9 @@
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
-                    <span class="text-text">The Modern Developer's AI Workspace</span>
+                    <span class="text-text"
+                        >The Modern Developer's AI Workspace</span
+                    >
                 </a>
                 <a
                     href={resolve("/blog/music-while-studying/")}
@@ -171,7 +173,7 @@
                 class="font-heading font-bold text-[13vw] leading-[0.85] text-text tracking-tighter select-none group transition-all duration-700 ease-out hover:tracking-normal hover:text-primary"
             >
                 <h1
-                    class="whitespace-nowrap leading-[0.85] font-heading font-bold text-normal text-text tracking-tighter group-hover:tracking-normal group-hover:text-primary transition-all duration-700 ease-out"
+                    class="whitespace-nowrap leading-[0.85] font-heading font-bold text-normal text-text tracking-tighter group-hover:tracking-tight group-hover:text-primary transition-all duration-200 ease-out"
                 >
                     ASAAD ZEIN<span class="text-primary">.</span>
                 </h1>
