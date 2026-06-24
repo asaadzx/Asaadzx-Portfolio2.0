@@ -67,7 +67,7 @@
     author="Asaad Zein"
 />
 
-<article class="w-full max-w-3xl mx-auto mt-16 sm:mt-32 mb-32 px-4 sm:px-6 font-body text-text">
+<article class="w-full max-w-3xl mx-auto mt-24 sm:mt-32 mb-32 px-4 sm:px-6 font-body text-text">
     <header class="border-b border-text/10 pb-6 mb-8">
         <div
             class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-bold tracking-widest text-primary mb-2"
