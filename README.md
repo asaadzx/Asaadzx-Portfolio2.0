@@ -116,11 +116,6 @@ Deployed on **Vercel** with serverless API routes for views/likes. Pages are pre
 - [x] Google Search Console
 - [x] Edge-hosted database (Turso) for views & likes
 - [x] Blog posts with view counters and like buttons
-- [ ] Add Status Section in about me page
+- [X] Add Status Section in about me page
 - [ ] Make a Flutter app to control the website status
-- [ ] Figure a way to upload the blogs markdown files in a DB and fetch them dynamically
-- [ ] Figure a way to upload the website content blogs dynamically with the Flutter app
-- [ ] Make everything ready for the next 3 years and beyond and make changing files easier and more efficient
-- [ ] Store blog content in Turso DB (replace markdown files) with full-text search
-- [ ] Vercel Blob for blog cover images and media uploads
-- [ ] Flutter app to manage blog content (create/edit/delete posts) and control website status
+- [ ] Make A analytics page in flutter app to track blog views and likes

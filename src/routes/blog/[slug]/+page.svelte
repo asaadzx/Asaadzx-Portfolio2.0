@@ -62,7 +62,6 @@
     title="{meta.title} | Asaad's Logs"
     description={meta.excerpt}
     url={`https://asaadzx.is-a.dev/blog/${$page.params.slug}`}
-    image={`https://asaadzx.is-a.dev/blog/${$page.params.slug}/og.png`}
     type="article"
     published={meta.date}
     author="Asaad Zein"

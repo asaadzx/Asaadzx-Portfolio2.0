@@ -26,6 +26,11 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
+		<loc>https://asaadzx.is-a.dev/blog/music-while-studying/</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.6</priority>
+	</url>
+	<url>
 		<loc>https://asaadzx.is-a.dev/blog/epyac-enhanced/</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
@@ -46,7 +51,7 @@
 		<priority>0.6</priority>
 	</url>
 	<url>
-		<loc>https://asaadzx.is-a.dev/blog/music-while-studying/</loc>
+		<loc>https://asaadzx.is-a.dev/blog/embedded-systems-dna/</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.6</priority>
 	</url>
