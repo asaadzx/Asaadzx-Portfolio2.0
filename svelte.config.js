@@ -51,6 +51,7 @@ const config = {
 				'/blog/baklava-shell/',
 				'/blog/nasa-space-apps/',
 				'/blog/embedded-systems-dna/',
+				'/blog/portfolio-template/',
 				'/about/',
 				'/rss.xml/',
 			],

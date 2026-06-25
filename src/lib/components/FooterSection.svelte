@@ -108,6 +108,14 @@
                     <span class="text-text">The DNA of Embedded Systems</span>
                 </a>
                 <a
+                    href={resolve("/blog/portfolio-template/")}
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
+                >
+                    <span class="text-text">SvelteKit Portfolio Template</span>
+                </a>
+                <a
                     href={resolve("/blog/epyac-enhanced/")}
                     class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
