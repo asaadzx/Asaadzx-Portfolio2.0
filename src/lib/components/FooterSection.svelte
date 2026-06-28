@@ -1,6 +1,18 @@
 <script lang="ts">
     import { animate } from "animejs";
     import { resolve } from "$app/paths";
+    import { onMount } from "svelte";
+
+    let availability = $state("");
+
+    onMount(() => {
+        fetch("/api/status")
+            .then((r) => (r.ok ? r.json() : Promise.reject()))
+            .then((d) => {
+                if (d.availability?.value) availability = d.availability.value;
+            })
+            .catch(() => {});
+    });
 
     function nudge(e: MouseEvent) {
         const el = e.currentTarget as HTMLElement;
@@ -148,7 +160,7 @@
                 <p>LOC: Egypt, Cairo</p>
                 <p>SYS: SVELTE_5</p>
                 <p class="flex items-center gap-1">
-                    STATUS: Open For Projects <span
+                    STATUS: {availability || "Unavailable"} <span
                         class="text-primary text-lg leading-none">.</span
                     >
                 </p>

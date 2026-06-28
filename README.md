@@ -117,5 +117,3 @@ Deployed on **Vercel** with serverless API routes for views/likes. Pages are pre
 - [x] Edge-hosted database (Turso) for views & likes
 - [x] Blog posts with view counters and like buttons
 - [X] Add Status Section in about me page
-- [ ] Make a Flutter app to control the website status
-- [ ] Make A analytics page in flutter app to track blog views and likes

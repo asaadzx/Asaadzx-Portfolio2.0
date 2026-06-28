@@ -27,6 +27,19 @@
     let ghLoading = $state(true);
     let ghError = $state(false);
 
+    let status = $state<Record<string, { value: string; updatedAt: string }>>(
+        {},
+    );
+
+    onMount(() => {
+        fetch("/api/status")
+            .then((r) => (r.ok ? r.json() : Promise.reject()))
+            .then((d) => {
+                status = d;
+            })
+            .catch(() => {});
+    });
+
     const milestones = [
         {
             year: "2026",
@@ -85,7 +98,7 @@
 </script>
 
 <section
-    class="w-full max-w-4xl mx-auto mt-26 mb-32 px-6 font-body text-text space-y-20"
+    class="w-full max-w-4xl mx-auto mt-36 mb-32 px-6 font-body text-text space-y-20"
 >
     <SEO
         title="About | Asaad Zein"
@@ -105,8 +118,18 @@
         </h1>
     </div>
 
+    {#if status.message?.value}
+        <div bind:this={sections[1]}>
+            <blockquote
+                class="border-l-4 border-primary pl-4 py-2 text-2xl italic text-text/70 font-serif"
+            >
+                &ldquo;{status.message.value}&rdquo;
+            </blockquote>
+        </div>
+    {/if}
+
     <div
-        bind:this={sections[1]}
+        bind:this={sections[2]}
         class="opacity-0 grid grid-cols-1 md:grid-cols-3 gap-8 items-start"
     >
         <div class="md:col-span-2 space-y-4 text-sm leading-relaxed opacity-80">
@@ -255,6 +278,18 @@
                 <div>
                     <span class="opacity-40">HW:</span> Custom ESP32 Boards
                 </div>
+                {#if status.mood?.value}
+                    <div>
+                        <span class="opacity-40">MOOD:</span>
+                        {status.mood.value}
+                    </div>
+                {/if}
+                {#if status.project?.value}
+                    <div>
+                        <span class="opacity-40">PROJECT:</span>
+                        {status.project.value}
+                    </div>
+                {/if}
             </div>
             <a
                 href="/assets/Asaad%20Zein%20Sayed%20Resume.pdf"
@@ -267,7 +302,7 @@
         </div>
     </div>
 
-    <div bind:this={sections[2]} class="opacity-0 space-y-6">
+    <div bind:this={sections[3]} class="opacity-0 space-y-6">
         <div class="border-b border-text/10 pb-4 text-xs opacity-60 font-mono">
             <span class="text-primary font-bold"
                 >// RECORDED_HISTORICAL_LOGS</span
