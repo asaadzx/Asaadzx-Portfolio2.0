@@ -22,11 +22,11 @@
 </script>
 
 <footer
-    class="w-full px-4 sm:px-12 py-20 pb-8 font-body text-sm text-text/60 select-none"
+    class="w-full px-4 sm:px-12 2xl:px-24 py-20 pb-8 font-body text-sm 2xl:text-base text-text/60 select-none"
     id="footer"
 >
-    <div class="w-full max-w-6xl mx-auto border-t border-text/10 pt-16">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+    <div class="w-full max-w-6xl 2xl:max-w-7xl mx-auto border-t border-text/10 pt-16">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 2xl:gap-12 mb-16">
             <div class="flex flex-col space-y-3">
                 <span
                     class="text-xs font-bold tracking-widest text-text/80 uppercase"
@@ -82,24 +82,6 @@
                     // INBOUND_BLOGS
                 </span>
                 <a
-                    href={resolve("/blog/ai-workspace-guide/")}
-                    class="hover:text-text text-text/65 transition-colors"
-                    onmouseenter={nudge}
-                    onmouseleave={resetNudge}
-                >
-                    <span class="text-text"
-                        >The Modern Developer's AI Workspace</span
-                    >
-                </a>
-                <a
-                    href={resolve("/blog/music-while-studying/")}
-                    class="hover:text-text text-text/65 transition-colors"
-                    onmouseenter={nudge}
-                    onmouseleave={resetNudge}
-                >
-                    <span class="text-text">School Subjects Playlists</span>
-                </a>
-                <a
                     href={resolve("/blog/embedded-systems-dna/")}
                     class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
@@ -108,20 +90,20 @@
                     <span class="text-text">The DNA of Embedded Systems</span>
                 </a>
                 <a
+                    href={resolve("/blog/ai-workspace-guide/")}
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
+                >
+                    <span class="text-text">The Modern Developer's AI Workspace</span>
+                </a>
+                <a
                     href={resolve("/blog/portfolio-template/")}
                     class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
                     onmouseleave={resetNudge}
                 >
                     <span class="text-text">SvelteKit Portfolio Template</span>
-                </a>
-                <a
-                    href={resolve("/blog/epyac-enhanced/")}
-                    class="hover:text-text text-text/65 transition-colors"
-                    onmouseenter={nudge}
-                    onmouseleave={resetNudge}
-                >
-                    <span class="text-text">EPYAC: Technical Architecture</span>
                 </a>
             </div>
 
@@ -178,7 +160,7 @@
         >
             <a
                 href={resolve("/")}
-                class="font-heading font-bold text-[13vw] leading-[0.85] text-text tracking-tighter select-none group transition-all duration-700 ease-out hover:tracking-normal hover:text-primary"
+                class="font-heading font-bold text-[13vw] 2xl:text-[11vw] leading-[0.85] text-text tracking-tighter select-none group transition-all duration-700 ease-out hover:tracking-normal hover:text-primary"
             >
                 <h1
                     class="whitespace-nowrap leading-[0.85] font-heading font-bold text-normal text-text tracking-tighter group-hover:tracking-tight group-hover:text-primary transition-all duration-200 ease-out"

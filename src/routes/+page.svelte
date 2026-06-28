@@ -3,7 +3,6 @@
     import WorkSection from "$lib/components/WorkSection.svelte";
     import GallerySection from "$lib/components/GallerySection.svelte";
     import ContactSection from "$lib/components/ContactSection.svelte";
-    import FooterSection from "$lib/components/FooterSection.svelte";
     import ScrollSection from "$lib/components/ScrollSection.svelte";
 </script>
 
@@ -14,5 +13,4 @@
     </ScrollSection>
     <GallerySection />
     <ContactSection />
-    <FooterSection />
 </div>

@@ -3,6 +3,7 @@
     import { resolve } from "$app/paths";
     import { onMount } from "svelte";
     import { Eye } from "@lucide/svelte";
+    import Icon from "@iconify/svelte";
     import SEO from "$lib/components/SEO.svelte";
 
     let { data } = $props();
@@ -22,7 +23,9 @@
         try {
             const res = await fetch("/api/posts");
             if (res.ok) stats = await res.json();
-        } catch { /* ignore */ }
+        } catch {
+            /* ignore */
+        }
     });
 </script>
 
@@ -41,7 +44,7 @@
         </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[240px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         {#each data.posts as post, index (post.slug)}
             {@const postStats = stats[post.slug]}
             <div
@@ -50,48 +53,62 @@
             >
                 <a
                     href={resolve(`/blog/${post.slug}/`)}
-                    class="group w-full h-full p-6 rounded-xl border border-text/10 bg-card-bg flex flex-col justify-between relative overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
+                    class="group w-full h-full p-6 rounded-xl border border-text/10 bg-card-bg flex flex-col gap-3 relative overflow-hidden transition-all duration-300 hover:border-primary hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
                 >
-                    <div class="flex items-center justify-between text-xs font-mono">
-                        <div class="flex items-center gap-3">
-                            <span class="text-primary font-bold"
-                                >[{post.meta.date.split("-")[0]}]</span
-                            >
-                            <div class="flex gap-1.5">
-                                {#each post.meta.tags.slice(0, 2) as tag (tag)}
-                                    <span
-                                        class="text-[10px] border border-text/10 px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity"
-                                        >#{tag}</span
-                                    >
-                                {/each}
-                            </div>
+                    <div class="flex items-start gap-2 text-xs font-mono">
+                        <span class="text-primary font-bold shrink-0"
+                            >[{post.meta.date.split("-")[0]}]</span
+                        >
+                        <div class="flex gap-1.5 min-w-0 flex-1 flex-wrap">
+                            {#each post.meta.tags.slice(0, 2) as tag (tag)}
+                                <span
+                                    class="text-[10px] border border-text/10 px-1.5 py-0.5 rounded opacity-75 group-hover:opacity-100 transition-opacity truncate max-w-30"
+                                    >#{tag}</span
+                                >
+                            {/each}
                         </div>
-                        <span class="opacity-20 group-hover:opacity-50 group-hover:text-primary transition-all text-[10px]">
+                        <span
+                            class="shrink-0 opacity-20 group-hover:opacity-50 group-hover:text-primary transition-all text-[10px]"
+                        >
                             [LOG_{String(index).padStart(2, "0")}]
                         </span>
                     </div>
 
-                    <div class="space-y-2">
-                        <h2 class="font-heading font-bold text-xl md:text-2xl tracking-tight text-text group-hover:text-primary transition-colors duration-150">
+                    <div class="space-y-2 flex-1">
+                        <h2
+                            class="font-heading font-bold text-xl md:text-2xl tracking-tight text-text group-hover:text-primary transition-colors duration-150 line-clamp-2"
+                        >
                             {post.meta.title}
                         </h2>
-                        <p class="text-xs text-text/75 group-hover:text-text/90 leading-relaxed line-clamp-2 max-w-xl transition-opacity">
+                        <p
+                            class="text-xs text-text/75 group-hover:text-text/90 leading-relaxed line-clamp-2 transition-opacity"
+                        >
                             {post.meta.excerpt}
                         </p>
                     </div>
 
-                    <div class="mt-4 pt-3 border-t border-text/10 flex justify-between items-center text-xs transition-all duration-200">
-                        <span class="font-mono text-[10px] tracking-wider opacity-50 group-hover:opacity-100 group-hover:text-accent">
+                    <div
+                        class="flex justify-between items-center text-xs pt-3 border-t border-text/10"
+                    >
+                        <span
+                            class="font-mono text-[10px] tracking-wider opacity-50 group-hover:opacity-100 group-hover:text-accent"
+                        >
                             READ_TRANSMISSION.EXE
                         </span>
-                        <div class="flex items-center gap-3 opacity-50 group-hover:opacity-100 transition-opacity">
+                        <div
+                            class="flex items-center gap-3 opacity-50 group-hover:opacity-100 transition-opacity"
+                        >
                             {#if postStats}
-                                <span class="flex items-center gap-1 text-[10px]">
+                                <span
+                                    class="flex items-center gap-1 text-[10px] shrink-0"
+                                >
                                     <Eye class="size-3" />
                                     {postStats.views}
                                 </span>
                             {/if}
-                            <span class="text-primary -translate-x-1 group-hover:translate-x-0 transition-transform duration-200">
+                            <span
+                                class="text-primary -translate-x-1 group-hover:translate-x-0 transition-transform duration-200"
+                            >
                                 &rarr;
                             </span>
                         </div>
@@ -99,5 +116,18 @@
                 </a>
             </div>
         {/each}
+    </div>
+
+    <div class="mt-16 pt-6 border-t border-text/10 flex justify-center">
+        <a
+            href={resolve("/rss.xml")}
+            class="group flex items-center gap-2.5 text-xs font-mono opacity-60 hover:opacity-100 hover:text-orange-500 transition-all duration-200 px-4 py-2 rounded-full border border-dashed border-text/20 hover:border-orange-500/40 hover:bg-orange-500/5"
+        >
+            <Icon
+                icon="simple-icons:rss"
+                class="size-4 group-hover:scale-110 transition-transform"
+            />
+            <span class="tracking-wider uppercase">Subscribe via RSS</span>
+        </a>
     </div>
 </section>

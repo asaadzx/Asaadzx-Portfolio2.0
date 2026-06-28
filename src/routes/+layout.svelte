@@ -1,12 +1,16 @@
 <script lang="ts">
     import "./layout.css";
     import NavBar from "$lib/components/NavBar.svelte";
+    import FooterSection from "$lib/components/FooterSection.svelte";
     import SEO from "$lib/components/SEO.svelte";
     import { theme } from "$lib/theme.svelte";
+    import { page } from "$app/stores";
 
     let { children } = $props();
 
     let themeColor = $derived(theme.current === "dark" ? "#161412" : "#edebe9");
+
+    let isBlogPost = $derived($page.route.id === "/blog/[slug]");
 
     $effect(() => {
         if (typeof document !== "undefined") {
@@ -32,3 +36,6 @@
 <main>
     {@render children()}
 </main>
+{#if !isBlogPost}
+    <FooterSection />
+{/if}
