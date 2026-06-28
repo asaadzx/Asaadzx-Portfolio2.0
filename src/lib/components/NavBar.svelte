@@ -62,6 +62,20 @@
                 ></span>
             </a>
         </li>
+        <li>
+            <a
+                href={resolve("/blog")}
+                class="group relative flex items-center gap-3 overflow-hidden"
+            >
+                <span
+                    class="transition-all duration-200 ease-out font-body text-sm sm:text-base"
+                    >Blogs</span
+                >
+                <span
+                    class="absolute bottom-0 left-0 h-px bg-primary w-full scale-x-0 transition-transform duration-200 ease-out origin-left group-hover:scale-x-100"
+                ></span>
+            </a>
+        </li>
     </ul>
 
     <ul class="flex items-center gap-6">
