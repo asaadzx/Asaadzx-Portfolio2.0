@@ -20,11 +20,11 @@
 
 <nav
     bind:this={navEl}
-    class="fixed top-0 left-0 w-full flex items-center justify-between px-6 sm:px-12 py-5 z-50 bg-background/40 backdrop-blur-sm"
+    class="fixed top-0 left-0 w-full flex items-center justify-between px-4 sm:px-12 py-5 z-50 bg-background/40 backdrop-blur-sm"
 >
-    <ul class="flex items-center gap-8">
+    <ul class="flex items-center gap-4 sm:gap-8">
         <li>
-            <a href={resolve("/")} class="block shrink-0">
+            <a href={resolve("/")} class="block shrink-0 max-md:hidden">
                 <img
                     src="https://github.com/asaadzx.png"
                     alt="Home"
@@ -89,7 +89,7 @@
             >
                 <span
                     class="transition-all duration-200 ease-out font-body text-sm sm:text-base"
-                    >Contact --></span
+                    >Contact</span
                 >
                 <span
                     class="absolute bottom-0 left-0 h-px bg-primary w-full scale-x-0 transition-transform duration-200 ease-out origin-left group-hover:scale-x-100"
