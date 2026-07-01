@@ -297,7 +297,7 @@
                 rel="external"
                 class="block text-center border border-primary text-primary hover:bg-primary hover:text-background font-bold transition-all duration-200 py-2 rounded-lg mt-2 text-xs"
             >
-                &darr; DOWNLOAD_CV.RAW
+                &darr; DOWNLOAD MY CV
             </a>
         </div>
     </div>
