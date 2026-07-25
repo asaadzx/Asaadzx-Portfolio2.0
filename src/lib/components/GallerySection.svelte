@@ -52,6 +52,48 @@
             title: "Cool Figures skating",
             type: "Legos",
         },
+        {
+            id: 8,
+            src: "/Images/opt/CairoTower.jpg",
+            title: "Cairo Tower",
+            type: "Cairo",
+        },
+        {
+            id: 9,
+            src: "/Images/opt/EgyptMuseumHall.jpg",
+            title: "Egypt Museum Hall",
+            type: "Cairo",
+        },
+        {
+            id: 10,
+            src: "/Images/opt/EgyptMuseumStatue.jpg",
+            title: "Egypt Museum Statue",
+            type: "Cairo",
+        },
+        {
+            id: 11,
+            src: "/Images/opt/EgyptMuseumStatue1.jpg",
+            title: "Egypt Museum Statue (First Ever Student In history 😂)",
+            type: "Cairo",
+        },
+        {
+            id: 12,
+            src: "/Images/opt/EgyptNail%201.jpg",
+            title: "Egypt Nail ",
+            type: "Cairo",
+        },
+        {
+            id: 13,
+            src: "/Images/opt/EgyptNail%202.jpg",
+            title: "Egypt Nail ",
+            type: "Cairo",
+        },
+        {
+            id: 14,
+            src: "/Images/opt/SomeLocalBookStoreTahrir.jpeg",
+            title: "Some Local BookStore Tahrir",
+            type: "Tahrir",
+        },
     ];
 
     function openLightbox(index: number) {

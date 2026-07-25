@@ -212,6 +212,11 @@
             label: "Buy Me a Coffee",
             icon: "simple-icons:buymeacoffee",
         },
+        {
+            href: "https://www.instagram.com/asaad.zein.1/",
+            label: "Instagram",
+            icon: "simple-icons:instagram",
+        },
     ] as const;
 
     $effect(() => {

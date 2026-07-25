@@ -85,6 +85,16 @@
                 >
                     Buy Me a Coffee
                 </a>
+                <a
+                    href="https://www.instagram.com/asaad.zein.1/"
+                    target="_blank"
+                    rel="noopener noreferrer external"
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
+                >
+                    Instagram
+                </a>
             </div>
 
             <div class="flex flex-col space-y-3">
