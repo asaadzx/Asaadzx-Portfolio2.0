@@ -52,6 +52,7 @@ const config = {
 				'/blog/nasa-space-apps/',
 				'/blog/embedded-systems-dna/',
 				'/blog/portfolio-template/',
+				'/blog/security-geeks-presentation/',
 				'/about/',
 				'/rss.xml/',
 			],

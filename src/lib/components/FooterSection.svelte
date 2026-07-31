@@ -104,6 +104,14 @@
                     // INBOUND_BLOGS
                 </span>
                 <a
+                    href={resolve("/blog/security-geeks-presentation/")}
+                    class="hover:text-text text-text/65 transition-colors"
+                    onmouseenter={nudge}
+                    onmouseleave={resetNudge}
+                >
+                    <span class="text-text">Security Geeks: Ethical Hacking</span>
+                </a>
+                <a
                     href={resolve("/blog/embedded-systems-dna/")}
                     class="hover:text-text text-text/65 transition-colors"
                     onmouseenter={nudge}
