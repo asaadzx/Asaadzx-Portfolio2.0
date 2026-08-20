@@ -173,4 +173,11 @@
     :global(.prose code) {
         word-break: break-word;
     }
+
+    :global(.prose mark) {
+        background-color: color-mix(in srgb, var(--color-accent) 25%, transparent);
+        color: var(--color-text);
+        padding: 0 0.15em;
+        border-radius: 0.25rem;
+    }
 </style>
