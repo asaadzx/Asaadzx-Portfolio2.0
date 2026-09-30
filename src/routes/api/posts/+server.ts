@@ -6,7 +6,18 @@ export async function GET() {
 
 	const stats: Record<string, { views: number; likes: number }> = {};
 	for (const row of result.rows) {
-		stats[row.slug as string] = {
+		const slug = String(row.slug ?? "").trim();
+
+		// A missing front-matter slug reaches the database as the literal text
+		// "undefined", because JS stringifies undefined rather than skipping it.
+		// That row has a real view count but no post behind it, so serving it
+		// makes clients render a ghost entry. The app filters these too; both
+		// layers exist so neither is a single point of failure.
+		if (!slug || slug === "undefined" || slug === "null" || slug === "NaN") {
+			continue;
+		}
+
+		stats[slug] = {
 			views: Number(row.views),
 			likes: Number(row.likes),
 		};
