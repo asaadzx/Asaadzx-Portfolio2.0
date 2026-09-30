@@ -1,7 +1,20 @@
 import { json } from "@sveltejs/kit";
 import { db } from "$lib/server/db";
-import { GITHUB_TOKEN } from "$env/static/private";
+import { STATUS_API_TOKEN } from "$env/static/private";
 
+/**
+ * Writes are gated on STATUS_API_TOKEN, not on GITHUB_TOKEN.
+ *
+ * The Android app authenticates to this endpoint with a dedicated write token so
+ * that its GitHub PAT - which is only ever scoped to `GET /user` and grants no
+ * writes - is never sent here. Gating on GITHUB_TOKEN instead meant the request
+ * was compared against the backend's own credential for calling
+ * api.github.com, which no client could ever hold, so every write returned 401.
+ *
+ * Deployments that do not set STATUS_API_TOKEN keep the previous behaviour of
+ * leaving writes ungated. That is only safe while the endpoint is unreachable
+ * from the internet; set the variable to keep it closed.
+ */
 export async function GET() {
 	const result = await db.execute("SELECT key, value, updated_at FROM status");
 	const status: Record<string, { value: string; updatedAt: string }> = {};
@@ -15,9 +28,9 @@ export async function GET() {
 }
 
 export async function POST({ request }) {
-	if (GITHUB_TOKEN) {
+	if (STATUS_API_TOKEN) {
 		const auth = request.headers.get("authorization");
-		if (!auth || auth !== `Bearer ${GITHUB_TOKEN}`) {
+		if (!auth || auth !== `Bearer ${STATUS_API_TOKEN}`) {
 			return json({ error: "Unauthorized" }, { status: 401 });
 		}
 	}
